@@ -146,7 +146,7 @@ def _compute_hide_toc(
     return has_not_enough_items_to_show_toc(builder, docname)
 
 
-@lru_cache(maxsize=None)
+@lru_cache(maxsize=5)
 def _asset_hash(path: str) -> str:
     """Append a `?digest=` to an url based on the file content."""
     full_path = THEME_PATH / "static" / path
